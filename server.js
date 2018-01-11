@@ -8,6 +8,10 @@ mongoose.Promise = global.Promise;
 
 const { DATABASE_URL, PORT } = require('./config');
 const { BlogPost } = require('./models');
+
+//Authentication imports
+const passport = require('passport');
+const { Strategy: LocalStrategy } = require('passport-local');
 const { User } = require('./models');
 
 
