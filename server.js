@@ -179,7 +179,14 @@ app.post('/users', (req, res) => {
 });
 
 
+const localAuth = passport.authenticate('local', {session: false});
 
+// Protected endpoint
+
+app.post('/secret', localAuth, (req, res)=>{
+  console.log(`${req.user.username} is IN!!!`);
+  return res.json({ data: `${req.user.username}, You're a Superstar!`});
+});
 
 app.get('/posts', (req, res) => {
   BlogPost

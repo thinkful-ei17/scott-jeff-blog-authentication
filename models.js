@@ -61,8 +61,9 @@ UserSchema.methods.validatePassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.model('User', UserSchema);
-const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+exports.User = mongoose.model('User', UserSchema);
+exports.BlogPost = mongoose.model('BlogPost', blogPostSchema);
 
-module.exports = { User };
-module.exports = { BlogPost };
+// const User = mongoose.model('User', UserSchema);
+// const BlogPost = mongoose.model('BlogPost', blogPostSchema);
+// module.exports = { BlogPost, User};
